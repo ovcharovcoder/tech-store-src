@@ -135,22 +135,7 @@ a {
   color: inherit;
   line-height: inherit;
 }
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-[type='submit']:focus,
-[type='button']:focus {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: 2px;
-}
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: 4px;
-}
+
 textarea {
   resize: vertical;
 }
@@ -218,12 +203,6 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .main {
   flex: 1 0 auto;
 }
@@ -246,9 +225,9 @@ body {
 }
 
 // === GLOBAL CLASSES ===
-
 .container {
-  max-width: 1230px;
+  width: 100%;
+  max-width: 1670px;
   margin: 0 auto;
-  padding: 0 0.9375rem; // 0 15px
+  padding: 0 15px;
 }

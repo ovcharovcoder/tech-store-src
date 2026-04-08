@@ -11,15 +11,468 @@ Development date: 08.04.2026 -->
   </head>
 
   <body>
-    <div class="wrapper">
-      <!--  Header section -->
-      <header class="header"></header>
-      <!--  Header section end-->
+    <!-- Header section -->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <!-- Logo -->
+          <div class="header__logo">
+            <a href="/" class="logo">
+              <img
+                src="/images/logo.svg"
+                alt="Логотип магазину"
+                class="logo__img"
+              />
+            </a>
+          </div>
+
+          <!-- Burger button (з'являється на 850px) -->
+          <button class="burger" id="burgerBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Навігація (десктоп) -->
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Home</a>
+              </li>
+
+              <!-- Shop dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Shop
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">All Products</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">New Arrivals</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Sale</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Accessories</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Collections dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Collections
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Winter 2025</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Summer Vibes</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Limited Edition</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Company dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Company
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">About</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">FAQ</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Reviews</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Photos</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Gift Boxes</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Contact</a></li>
+                </ul>
+              </li>
+
+              <!-- Support dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Support
+                  <span class="nav__arrow-icon">
+                    <img src="images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-menu__link">FAQs</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Shipping Info</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Returns</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Icons (десктоп) -->
+          <div class="header__actions">
+            <a href="#" class="action-icon" aria-label="Wishlist">
+              <img src="/images/icons/favorite.svg" alt="heart" />
+            </a>
+            <a href="#" class="action-icon action-icon--cart" aria-label="Cart">
+              <img src="/images/icons/shopping-basket.svg" alt="cart" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile menu (з'являється при кліку на бургер) -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a href="#" class="mobile-menu__link">Home</a>
+        </li>
+
+        <!-- Shop mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Shop
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+
+        <!-- Collections mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Collections
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">Winter 2025</a></li>
+            <li><a href="#">Summer Vibes</a></li>
+            <li><a href="#">Limited Edition</a></li>
+          </ul>
+        </li>
+
+        <!-- Company mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Company
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Gift Boxes</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+
+        <!-- Support mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Support
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Mobile actions (іконки серця та корзини) -->
+      <!-- <div class="mobile-menu__actions">
+          <a href="#" class="action-icon" aria-label="Wishlist">
+            <img src="/images/icons/favorite.svg" alt="heart" />
+            <span>Wishlist</span>
+          </a>
+          <a href="#" class="action-icon action-icon--cart" aria-label="Cart">
+            <img src="/images/icons/shopping-basket.svg" alt="cart" />
+            <span>Cart</span>
+          </a>
+        </div> -->
     </div>
+
+    <!-- Overlay затемнення -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header section end-->
   </body>
 </html>
 
-<main class="main"></main>
+<main class="main">
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="projects__container">
+      <!-- Десктопна сітка (4 картки) -->
+      <div class="projects__grid">
+        <!-- Картка 1 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 1"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">New Arrivals</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 2 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-2.webp"
+            alt="Project 2"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Spring Sale Up to 50% Off</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 3 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-3.webp"
+            alt="Project 3"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Free Shipping Over $99</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 4 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 4"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">New Arrivals</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Мобільний слайдер -->
+      <div class="projects__slider">
+        <div class="projects__slider-track" id="sliderTrack">
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 1"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Modern Architecture</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-2.webp"
+                alt="Project 2"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Interior Design</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-3.webp"
+                alt="Project 3"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Urban Living</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 4"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Sustainable Design</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Навігація слайдера -->
+        <div class="projects__slider-nav">
+          <button
+            class="projects__slider-btn"
+            id="sliderPrev"
+            aria-label="Previous"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            class="projects__slider-btn"
+            id="sliderNext"
+            aria-label="Next"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dots індикатори -->
+        <div class="projects__slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs & Reviews Section -->
+  <section class="reviews">
+    <div class="reviews__container">
+      <!-- Хлібні крихти -->
+      <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">Home</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Electronics</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Smartphones</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Android</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Premium</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Galaxy S24 Ultra</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Блок відгуків -->
+      <div class="reviews__block">
+        <!-- Зірки (одне зображення) -->
+        <div class="reviews__stars">
+          <img
+            src="/images/icons/star-rating.svg"
+            alt="5 star rating"
+            class="reviews__stars-img"
+          />
+        </div>
+
+        <!-- Заголовок -->
+        <h2 class="reviews__title">
+          Loved by tons of people! Real users, real results.
+        </h2>
+
+        <!-- Текст -->
+        <p class="reviews__text">
+          Rated 4.8 out of 5 by over 7,809 customers — from dread beginners to
+          seasoned pros.
+        </p>
+
+        <!-- Кнопка -->
+        <a href="#" class="reviews__btn">View Product</a>
+      </div>
+    </div>
+  </section>
+</main>
   <footer class="footer">
     <div class="container">
 

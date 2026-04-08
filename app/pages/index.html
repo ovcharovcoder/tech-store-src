@@ -2,5 +2,235 @@
 Development author: Andrii Ovcharov
 Development date: 08.04.2026 -->
 @@include('header.html')
-<main class="main"></main>
+<main class="main">
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="projects__container">
+      <!-- Десктопна сітка (4 картки) -->
+      <div class="projects__grid">
+        <!-- Картка 1 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 1"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">New Arrivals</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 2 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-2.webp"
+            alt="Project 2"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Spring Sale Up to 50% Off</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 3 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-3.webp"
+            alt="Project 3"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Free Shipping Over $99</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 4 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 4"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">New Arrivals</h3>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Мобільний слайдер -->
+      <div class="projects__slider">
+        <div class="projects__slider-track" id="sliderTrack">
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 1"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Modern Architecture</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-2.webp"
+                alt="Project 2"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Interior Design</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-3.webp"
+                alt="Project 3"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Urban Living</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 4"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h3 class="project-card__title">Sustainable Design</h3>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Навігація слайдера -->
+        <div class="projects__slider-nav">
+          <button
+            class="projects__slider-btn"
+            id="sliderPrev"
+            aria-label="Previous"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            class="projects__slider-btn"
+            id="sliderNext"
+            aria-label="Next"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dots індикатори -->
+        <div class="projects__slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs & Reviews Section -->
+  <section class="reviews">
+    <div class="reviews__container">
+      <!-- Хлібні крихти -->
+      <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">Home</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Electronics</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Smartphones</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Android</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Premium</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Galaxy S24 Ultra</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Блок відгуків -->
+      <div class="reviews__block">
+        <!-- Зірки (одне зображення) -->
+        <div class="reviews__stars">
+          <img
+            src="/images/icons/star-rating.svg"
+            alt="5 star rating"
+            class="reviews__stars-img"
+          />
+        </div>
+
+        <!-- Заголовок -->
+        <h2 class="reviews__title">
+          Loved by tons of people! Real users, real results.
+        </h2>
+
+        <!-- Текст -->
+        <p class="reviews__text">
+          Rated 4.8 out of 5 by over 7,809 customers — from dread beginners to
+          seasoned pros.
+        </p>
+
+        <!-- Кнопка -->
+        <a href="#" class="reviews__btn">View Product</a>
+      </div>
+    </div>
+  </section>
+</main>
 @@include('footer.html')
