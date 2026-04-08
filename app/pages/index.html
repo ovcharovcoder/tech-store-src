@@ -232,5 +232,265 @@ Development date: 08.04.2026 -->
       </div>
     </div>
   </section>
+
+  <!-- You May Also Like Section -->
+  <section class="you-may-like">
+    <div class="you-may-like__container">
+      <h2 class="you-may-like__title">You May Also Like</h2>
+
+      <div class="you-may-like__grid">
+        <!-- Ліва частина: 4 картки в сітці 2x2 -->
+        <div class="you-may-like__products-wrapper">
+          <div class="you-may-like__products" id="productsSliderTrack">
+            <!-- Картка 1 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-1.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 2 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-2.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 3 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-2.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 4 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-1.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+          </div>
+
+          <!-- Dots для мобільного слайдера -->
+          <div class="you-may-like__dots" id="productsSliderDots"></div>
+        </div>
+
+        <!-- Права частина: велика картка -->
+        <div class="you-may-like__featured">
+          <div class="featured-card">
+            <div class="featured-card__image-wrapper">
+              <img
+                src="/images/product-img-1.webp"
+                alt="Samsung Galaxy S24 Ultra"
+                class="featured-card__image"
+              />
+              <button
+                class="featured-card__wishlist"
+                aria-label="Add to wishlist"
+              >
+                <img src="/images/icons/favorite.svg" alt="Wishlist" />
+              </button>
+            </div>
+            <div class="featured-card__content">
+              <span class="featured-card__badge">New Release</span>
+              <h3 class="featured-card__title">Samsung Galaxy S24 Ultra</h3>
+              <p class="featured-card__specs">256GB · 8GB RAM · Black</p>
+              <div class="featured-card__price">
+                <span class="featured-card__current-price">$999</span>
+                <span class="featured-card__old-price">$1,199</span>
+              </div>
+              <button class="featured-card__btn">View Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact">
+    <div class="contact__container">
+      <div class="contact__grid">
+        <!-- Ліва частина: форма -->
+        <div class="contact__form-wrapper">
+          <h2 class="contact__title">Get in Touch</h2>
+
+          <form class="contact__form" id="contactForm">
+            <!-- Поле Name -->
+            <div class="contact__field">
+              <label for="name" class="contact__label">Name*</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="contact__input"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            <!-- Поле Email -->
+            <div class="contact__field">
+              <label for="email" class="contact__label">Email*</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact__input"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <!-- Поле Message -->
+            <div class="contact__field">
+              <label for="message" class="contact__label">Message*</label>
+              <textarea
+                id="message"
+                name="message"
+                class="contact__textarea"
+                placeholder="Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Кнопка відправки -->
+            <button type="submit" class="contact__btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Права частина: зображення (ховається на мобільному) -->
+        <div class="contact__image-wrapper">
+          <img
+            src="/images/product-img-1.webp"
+            alt="Contact us"
+            class="contact__image"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Bottom Navigation (тільки для мобільної версії) -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__container">
+      <a href="/" class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/home.svg"
+            alt="Home"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="sortBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/catalog.svg"
+            alt="Sort"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="wishlistBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/favorite.svg"
+            alt="Wishlist"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="cartBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/shopping-basket.svg"
+            alt="Cart"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
 </main>
 @@include('footer.html')

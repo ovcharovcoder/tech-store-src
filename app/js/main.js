@@ -172,3 +172,186 @@ document.addEventListener('DOMContentLoaded', function () {
     goToSlide(0);
   }, 100);
 });
+
+// Слайдер для You May Also Like секції
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderTrack = document.getElementById('productsSliderTrack');
+  const dotsContainer = document.getElementById('productsSliderDots');
+
+  if (!sliderTrack || !dotsContainer) return;
+
+  let currentIndex = 0;
+  const slides = sliderTrack.querySelectorAll('.product-card');
+  const totalSlides = slides.length;
+
+  // Перевіряємо чи ми на мобільному пристрої (ширина <= 768px)
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  // Створюємо dots тільки на мобільному
+  function createDots() {
+    if (!isMobile()) {
+      dotsContainer.innerHTML = '';
+      return;
+    }
+
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('you-may-like__dot');
+      if (i === currentIndex) dot.classList.add('you-may-like__dot--active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  // Оновлюємо активний dot
+  function updateDots() {
+    if (!isMobile()) return;
+
+    const dots = dotsContainer.querySelectorAll('.you-may-like__dot');
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('you-may-like__dot--active');
+      } else {
+        dot.classList.remove('you-may-like__dot--active');
+      }
+    });
+  }
+
+  // Перехід до слайду
+  function goToSlide(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+
+    const slideWidth = slides[0].offsetWidth;
+    const gap = 16; // gap між слайдами
+    const scrollPosition = currentIndex * (slideWidth + gap);
+    sliderTrack.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth',
+    });
+
+    updateDots();
+  }
+
+  // Слідкуємо за скролом
+  function handleScroll() {
+    if (!isMobile()) return;
+
+    const slideWidth = slides[0].offsetWidth;
+    const gap = 16;
+    const scrollPosition = sliderTrack.scrollLeft;
+    const newIndex = Math.round(scrollPosition / (slideWidth + gap));
+
+    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalSlides) {
+      currentIndex = newIndex;
+      updateDots();
+    }
+  }
+
+  // Оновлення при ресайзі
+  function handleResize() {
+    createDots();
+    goToSlide(0);
+  }
+
+  // Події
+  sliderTrack.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleResize);
+
+  // Ініціалізація
+  createDots();
+
+  // Невелика затримка для коректного розрахунку
+  setTimeout(() => {
+    if (isMobile()) {
+      goToSlide(0);
+    }
+  }, 100);
+});
+
+// Валідація форми
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Отримуємо значення полів
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Проста валідація
+      if (!name) {
+        alert('Please enter your name');
+        return;
+      }
+
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      if (!message) {
+        alert('Please enter your message');
+        return;
+      }
+
+      // Тут можна додати відправку форми на сервер
+      console.log('Form submitted:', { name, email, message });
+      alert('Thank you for your message! We will get back to you soon.');
+      form.reset();
+    });
+  }
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+});
+
+// Мобільна нижня навігація
+document.addEventListener('DOMContentLoaded', function () {
+  // Кнопка сортування/фільтрації
+  const sortBtn = document.getElementById('sortBtn');
+  if (sortBtn) {
+    sortBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Тут можна відкрити модальне вікно з сортуванням
+      console.log('Open sort/filter modal');
+      alert('Sorting options coming soon!');
+    });
+  }
+
+  // Кнопка вподобань
+  const wishlistBtn = document.getElementById('wishlistBtn');
+  if (wishlistBtn) {
+    wishlistBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Тут можна перейти на сторінку вподобань
+      console.log('Navigate to wishlist');
+      window.location.href = '/wishlist';
+    });
+  }
+
+  // Кнопка кошика
+  const cartBtn = document.getElementById('cartBtn');
+  if (cartBtn) {
+    cartBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Тут можна відкрити кошик
+      console.log('Open cart');
+      window.location.href = '/cart';
+    });
+  }
+});
