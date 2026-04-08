@@ -1,21 +1,56 @@
 // Fonts
-/* Example 1
+
+// Figtree 400
 @font-face {
-    font-family: "SFProDisplay-Regular";
-    font-weight: 400;
-    font-style: normal;
-    src:
-        local("SFProDisplay-Regular"),
-        url("../fonts/SFProDisplay-Regular.woff2") format("woff2"),
-        url("../fonts/SFProDisplay-Regular.woff") format("woff");
-    font-display: swap;
+  font-family: 'Figtree';
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local('Figtree'),
+    url('../fonts/Figtree-Regular.woff2') format('woff2'),
+    url('../fonts/Figtree-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+// Figtree 500
+@font-face {
+  font-family: 'Figtreee';
+  font-weight: 500;
+  font-style: normal;
+  src:
+    local('Figtreee'),
+    url('../fonts/Figtreee-Medium.woff2') format('woff2'),
+    url('../fonts/Figtreee-Medium.woff') format('woff');
+  font-display: swap;
+}
+
+// Figtree 600
+@font-face {
+  font-family: 'Figtree';
+  font-weight: 600;
+  font-style: normal;
+  src:
+    local('Figtree'),
+    url('../fonts/Figtree-SemiBold.woff2') format('woff2'),
+    url('../fonts/Figtree-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+
+// Figtree 700
+@font-face {
+  font-family: 'Figtree';
+  font-weight: 700;
+  font-style: normal;
+  src:
+    local('Figtree'),
+    url('../fonts/Figtree-Bold.woff2') format('woff2'),
+    url('../fonts/Figtree-Bold.woff') format('woff');
+  font-display: swap;
 }
 
 // Example 2
-.barlow-regular {
-  font-family: "Barlow", sans-serif;
+.font-regular {
+  font-family: 'Figtree', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-*/
-
