@@ -220,14 +220,32 @@ body {
   @include figtree(400);
   font-size: 1rem; // 16px
   color: $default;
+  background-color: $white;
   display: flex;
   flex-direction: column;
 }
 
-// === GLOBAL CLASSES ===
 .container {
   width: 100%;
   max-width: 1670px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+// ===== ГЛОБАЛЬНІ СТИЛІ ДЛЯ КНОПОК (ДЕСКТОП) =====
+@media (min-width: 769px) {
+  .project-card__btn,
+  .reviews__btn,
+  .product-card__add-btn,
+  .featured-card__btn,
+  .contact__btn {
+    width: 160px !important;
+    min-width: 160px;
+    height: 55px;
+    padding: 0 16px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
 }

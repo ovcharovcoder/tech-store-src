@@ -14,9 +14,8 @@ img {
 // ===== HEADER =====
 .header {
   background-color: $white;
-  position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
   padding-top: 1rem;
 }
 
@@ -68,7 +67,7 @@ img {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #1e1e2a;
+  color: $default;
   transition: color 0.2s ease;
   display: inline-block;
   padding: 8px 0;
@@ -84,7 +83,7 @@ img {
   border: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #1e1e2a;
+  color: $default;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -177,7 +176,7 @@ img {
 .action-icon {
   position: relative;
   font-size: 1.35rem;
-  color: #1e1e2a;
+  color: $default;
   transition: color 0.2s ease;
   text-decoration: none;
   display: inline-flex;
@@ -234,7 +233,7 @@ img {
     display: block;
     width: 20px;
     height: 2px;
-    background-color: #1e1e2a;
+    background-color: $default;
     transition: all 0.3s ease;
     border-radius: 2px;
   }
@@ -266,20 +265,20 @@ img {
   width: 100%;
   height: 100vh;
   background-color: $white;
-  z-index: 999;
+  border-radius: 24px;
+  z-index: 1100;
   transition: left 0.3s ease;
   overflow-y: auto;
-  padding: 100px 20px 40px;
+  padding: 105px 20px 40px;
 
   .mobile-menu__list {
     display: flex;
     flex-direction: column;
     gap: 20px;
     list-style: none;
-  }
-
-  .mobile-menu__item {
-    border-bottom: 1px solid $light-grey;
+    background-color: $light-grey2;
+    padding: 20px;
+    border-radius: 24px;
   }
 
   .mobile-menu__link {
@@ -287,7 +286,7 @@ img {
     padding: 12px 0;
     font-size: 1.25rem;
     font-weight: 500;
-    color: #1e1e2a;
+    color: $default;
     text-decoration: none;
 
     &:hover {
@@ -300,7 +299,7 @@ img {
     border: none;
     font-size: 1.25rem;
     font-weight: 500;
-    color: #1e1e2a;
+    color: $default;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -405,52 +404,6 @@ img {
   visibility: visible;
 }
 
-/* ===== АДАПТИВ ===== */
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 20px;
-  }
-
-  .nav__list {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 880px) {
-  .header__inner {
-    flex-wrap: nowrap;
-    gap: 16px;
-    padding: 12px 20px;
-  }
-}
-
-/* ===== АДАПТИВ ДЛЯ 850px ===== */
-@media (max-width: 850px) {
-  .nav {
-    display: none; /* Ховаємо навігацію */
-  }
-
-  .header__actions {
-    display: none; /* Ховаємо іконки серця та корзини */
-  }
-
-  .burger {
-    display: flex; /* Показуємо бургер */
-  }
-
-  .header__inner {
-    justify-content: space-between;
-  }
-
-  .header__logo {
-    order: 1;
-  }
-
-  .burger {
-    order: 2;
-  }
-}
-
 // ===== PROJECTS SECTION =====
 .projects {
   padding: 60px 0;
@@ -499,7 +452,6 @@ img {
   display: block;
 }
 
-/* Градієнт поверх зображення - тільки внизу */
 .project-card__overlay {
   position: absolute;
   bottom: 0;
@@ -516,7 +468,7 @@ img {
   flex-direction: column;
   justify-content: flex-end;
   transition: background 0.3s ease;
-  pointer-events: none; /* Дозволяє клікати крізь оверлей */
+  pointer-events: none;
 }
 
 .project-card__title {
@@ -525,36 +477,16 @@ img {
   color: $white;
   margin: 0;
   line-height: 1.3;
-  pointer-events: auto; /* Кнопка має бути клікабельною */
+  pointer-events: auto;
 }
 
 .project-card__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: $accent;
-  border: 2px solid transparent;
-  color: $white;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 10px 24px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  width: fit-content;
+  @include btn-primary;
   margin-top: 16px;
-  pointer-events: auto; /* Кнопка має бути клікабельною */
-
-  &:hover {
-    background: $accent;
-    border-color: $light-purple;
-    color: $white;
-    transform: scale(1.02);
-  }
+  pointer-events: auto;
+  padding: 8px 20px;
 }
 
-/* Слайдер для мобільних */
 .projects__slider {
   display: none;
   position: relative;
@@ -581,45 +513,6 @@ img {
   scroll-snap-stop: always;
 }
 
-/* Навігація слайдера */
-.projects__slider-nav {
-  display: none;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.projects__slider-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: $white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  color: #1e1e2a;
-
-  &:hover {
-    background: $accent;
-    color: $white;
-    transform: scale(1.05);
-  }
-
-  &:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    transform: none;
-
-    &:hover {
-      background: $white;
-      color: #1e1e2a;
-    }
-  }
-}
-
 .projects__slider-dots {
   display: flex;
   justify-content: center;
@@ -644,57 +537,6 @@ img {
   }
 }
 
-/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТІВ ===== */
-@media (max-width: 1024px) {
-  .projects__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .project-card__title {
-    font-size: 22px;
-  }
-}
-
-/* ===== АДАПТИВ ДЛЯ МОБІЛКИ (СЛАЙДЕР) ===== */
-@media (max-width: 768px) {
-  .projects__grid {
-    display: none;
-  }
-
-  .projects__slider {
-    display: block;
-  }
-
-  .project-card__title {
-    font-size: 20px;
-  }
-
-  .project-card__btn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    margin-top: 12px;
-  }
-
-  .project-card__overlay {
-    padding: 16px 12px 12px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .projects__slider-item {
-    flex: 0 0 calc(90% - 20px);
-  }
-
-  .projects {
-    padding: 40px 0;
-  }
-
-  .project-card__title {
-    font-size: 18px;
-  }
-}
-
 // ===== BREADCRUMBS & REVIEWS SECTION =====
 .reviews {
   padding: 60px 0;
@@ -706,7 +548,6 @@ img {
   padding: 0 15px;
 }
 
-/* Хлібні крихти */
 .breadcrumbs {
   margin-bottom: 48px;
 }
@@ -745,12 +586,11 @@ img {
   font-weight: 600;
 }
 
-/* Блок відгуків */
 .reviews__block {
   max-width: 1500px;
   width: 100%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 48px 24px;
   background-color: #e9d7fe;
   border-radius: 16px;
   text-align: center;
@@ -778,111 +618,22 @@ img {
 
 .reviews__text {
   font-size: 16px;
-  color: $light-purple;
+  color: #42307dbe;
   margin: 0 0 32px 0;
   line-height: 1.5;
-  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .reviews__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: $accent;
-  border: 2px solid transparent;
-  color: $white;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 12px 32px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-
-  &:hover {
-    background: $accent;
-    border-color: $light-purple;
-    color: $white;
-    transform: scale(1.02);
-  }
-}
-
-/* ===== АДАПТИВ ===== */
-@media (max-width: 1024px) {
-  .reviews__title {
-    font-size: 38px;
-  }
-
-  .reviews__stars-img {
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .reviews {
-    padding: 40px 0;
-  }
-
-  .breadcrumbs {
-    margin-bottom: 32px;
-  }
-
-  .breadcrumbs__list {
-    gap: 6px;
-  }
-
-  .breadcrumbs__item {
-    font-size: 12px;
-    gap: 6px;
-  }
-
-  .reviews__block {
-    padding: 20px;
-  }
-
-  .reviews__title {
-    font-size: 28px;
-  }
-
-  .reviews__stars {
-    margin-bottom: 24px;
-  }
-
-  .reviews__stars-img {
-    max-width: 160px;
-  }
-
-  .reviews__text {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  .reviews__btn {
-    padding: 10px 28px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .reviews__title {
-    font-size: 24px;
-  }
-
-  .reviews__stars-img {
-    max-width: 140px;
-  }
-
-  .reviews__block {
-    padding: 16px;
-  }
+  @include btn-primary;
+  padding: 10px 28px;
 }
 
 // ===== YOU MAY ALSO LIKE SECTION =====
 .you-may-like {
   padding: 60px 0;
-  overflow-x: hidden; /* Додано - приховуємо горизонтальний скрол */
+  overflow-x: hidden;
 }
 
 .you-may-like__container {
@@ -890,13 +641,12 @@ img {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  overflow-x: hidden; /* Додано - приховуємо горизонтальний скрол */
 }
 
 .you-may-like__title {
   font-size: 24px;
   font-weight: 600;
-  color: #1e1e2a;
+  color: $default;
   text-align: center;
   margin: 0 0 48px 0;
 }
@@ -908,13 +658,11 @@ img {
   align-items: stretch;
 }
 
-/* Ліва частина: 4 картки в сітці 2x2 */
 .you-may-like__products-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%; /* Додано */
-  overflow: hidden; /* Додано */
+  width: 100%;
 }
 
 .you-may-like__products {
@@ -922,27 +670,26 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   height: 100%;
-  width: 100%; /* Додано */
+  width: 100%;
 }
 
-/* Маленька картка товару */
 .product-card {
   background: $white;
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%; /* Додано */
-  box-sizing: border-box; /* Додано */
+  width: 100%;
+  box-sizing: border-box;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -994,17 +741,18 @@ img {
 }
 
 .product-card__title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1e1e2a;
+  font-size: 24px;
+  font-weight: 700;
+  color: $default;
   margin: 0 0 8px 0;
 }
 
 .product-card__specs {
-  font-size: 14px;
+  font-size: 1rem;
   color: #6b7280;
   margin: 0 0 12px 0;
   line-height: 1.4;
+  text-align: left;
 }
 
 .product-card__price {
@@ -1017,7 +765,7 @@ img {
 .product-card__current-price {
   font-size: 20px;
   font-weight: 700;
-  color: $accent;
+  color: $default;
 }
 
 .product-card__old-price {
@@ -1027,27 +775,11 @@ img {
 }
 
 .product-card__add-btn {
-  width: 100%; /* Змінено з 40% на 100% для мобільного */
-  background: $accent;
-  border: 2px solid transparent;
-  color: $white;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 12px 16px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  @include btn-primary-full;
   margin-top: auto;
-
-  &:hover {
-    background: $accent;
-    border-color: $light-purple;
-    color: $white;
-    transform: scale(1.02);
-  }
+  padding: 10px 16px;
 }
 
-/* Права частина: велика картка */
 .you-may-like__featured {
   display: flex;
   height: 100%;
@@ -1057,7 +789,7 @@ img {
   background: $white;
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -1065,11 +797,11 @@ img {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  box-sizing: border-box; /* Додано */
+  box-sizing: border-box;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1123,28 +855,30 @@ img {
 
 .featured-card__badge {
   display: inline-block;
-  background: #fce4ec;
-  color: #e91e63;
+  background: $light-purple;
+  color: $accent;
   font-size: 12px;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 20px;
   margin-bottom: 24px;
+  text-transform: uppercase;
   width: fit-content;
 }
 
 .featured-card__title {
   font-size: 24px;
   font-weight: 700;
-  color: #1e1e2a;
+  color: $default;
   margin: 0 0 8px 0;
 }
 
 .featured-card__specs {
-  font-size: 14px;
+  font-size: 1rem;
   color: #6b7280;
   margin: 0 0 16px 0;
   line-height: 1.4;
+  text-align: left;
 }
 
 .featured-card__price {
@@ -1158,7 +892,7 @@ img {
 .featured-card__current-price {
   font-size: 24px;
   font-weight: 700;
-  color: $accent;
+  color: $default;
 }
 
 .featured-card__old-price {
@@ -1168,31 +902,11 @@ img {
 }
 
 .featured-card__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: $accent;
-  border: 2px solid transparent;
-  color: $white;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 12px 32px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  width: 100%; /* Змінено з 40% на 100% для мобільного */
+  @include btn-primary-full;
   margin-top: 16px;
-
-  &:hover {
-    background: $accent;
-    border-color: $light-purple;
-    color: $white;
-    transform: scale(1.02);
-  }
+  padding: 10px 20px;
 }
 
-/* Dots для мобільного слайдера */
 .you-may-like__dots {
   display: none;
   justify-content: center;
@@ -1217,185 +931,6 @@ img {
   }
 }
 
-/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТІВ ===== */
-@media (max-width: 1024px) {
-  .you-may-like__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .you-may-like__products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .featured-card__title {
-    font-size: 22px;
-  }
-
-  .featured-card__current-price {
-    font-size: 22px;
-  }
-
-  .product-card__image-wrapper {
-    height: 220px;
-  }
-
-  .product-card__add-btn {
-    width: 100%; /* На планшеті теж на всю ширину */
-  }
-
-  .featured-card__btn {
-    width: 100%; /* На планшеті теж на всю ширину */
-  }
-}
-
-/* ===== АДАПТИВ ДЛЯ МОБІЛКИ (СЛАЙДЕР) ===== */
-@media (max-width: 768px) {
-  .you-may-like {
-    padding: 40px 0;
-  }
-
-  .you-may-like__title {
-    font-size: 20px;
-    margin-bottom: 32px;
-  }
-
-  /* Слайдер для маленьких карток */
-  .you-may-like__products {
-    display: flex;
-    flex-wrap: nowrap; /* Додано - забороняємо перенесення */
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden; /* Додано */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 8px;
-    width: 100%; /* Додано */
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .product-card {
-    flex: 0 0 calc(50% - 8px);
-    min-width: calc(50% - 8px);
-    max-width: calc(50% - 8px); /* Додано */
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    padding: 12px;
-  }
-
-  .product-card__image-wrapper {
-    height: 200px;
-  }
-
-  /* Показуємо dots на мобільному */
-  .you-may-like__dots {
-    display: flex;
-  }
-
-  .product-card__title {
-    font-size: 16px;
-  }
-
-  .product-card__current-price {
-    font-size: 18px;
-  }
-
-  .product-card__content {
-    padding-top: 16px;
-  }
-
-  .product-card__add-btn {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-  }
-
-  /* Велика картка на всю ширину */
-  .you-may-like__featured {
-    margin-top: 24px;
-    width: 100%; /* Додано */
-  }
-
-  .featured-card {
-    width: 100%;
-  }
-
-  .featured-card__title {
-    font-size: 18px;
-  }
-
-  .featured-card__current-price {
-    font-size: 18px;
-  }
-
-  .featured-card__old-price {
-    font-size: 14px;
-  }
-
-  .featured-card__badge {
-    margin-bottom: 16px;
-  }
-
-  .featured-card__content {
-    padding-top: 16px;
-  }
-
-  .featured-card__btn {
-    width: 100%;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .featured-card__price {
-    padding-bottom: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    flex: 0 0 calc(50% - 8px);
-    min-width: calc(50% - 8px);
-    max-width: calc(50% - 8px); /* Додано */
-    padding: 10px;
-  }
-
-  .product-card__image-wrapper {
-    height: 160px;
-  }
-
-  .featured-card {
-    padding: 12px;
-  }
-
-  .product-card__content {
-    padding-top: 12px;
-  }
-
-  .featured-card__content {
-    padding-top: 12px;
-  }
-
-  .featured-card__price {
-    padding-bottom: 10px;
-  }
-
-  .featured-card__btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-  }
-
-  .product-card__add-btn {
-    padding: 8px 10px;
-    font-size: 0.85rem;
-  }
-}
-
 // ===== CONTACT SECTION =====
 .contact {
   padding: 60px 0;
@@ -1414,7 +949,6 @@ img {
   align-items: center;
 }
 
-/* Ліва частина: форма */
 .contact__form-wrapper {
   max-width: 600px;
   width: 100%;
@@ -1423,7 +957,7 @@ img {
 .contact__title {
   font-size: 36px;
   font-weight: 700;
-  color: #1e1e2a;
+  color: $default;
   margin: 0 0 40px 0;
   line-height: 1.2;
 }
@@ -1441,9 +975,9 @@ img {
 }
 
 .contact__label {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #1e1e2a;
+  color: $grey;
 }
 
 .contact__input {
@@ -1455,6 +989,7 @@ img {
   border-radius: 12px;
   background: $white;
   transition: all 0.3s ease;
+  color: $default;
 
   &::placeholder {
     color: #9ca3af;
@@ -1464,14 +999,68 @@ img {
     outline: none;
     border-color: $accent;
     box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+    color: $default;
   }
 
   &:hover:not(:focus) {
     border-color: #cbd5e1;
   }
+
+  &.contact__input--error {
+    border-color: $error-color;
+    background-color: #fff7ed;
+
+    &:focus {
+      border-color: $error-color;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
+  }
 }
 
 .contact__textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: $white;
+  resize: vertical;
+  transition: all 0.3s ease;
+  color: $default;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+    color: $default;
+  }
+
+  &:hover:not(:focus) {
+    border-color: #cbd5e1;
+  }
+
+  &.contact__textarea--error {
+    border-color: $error-color;
+    background-color: #fff7ed;
+
+    &:focus {
+      border-color: $error-color;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
+  }
+}
+
+.contact__select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.contact__select {
   width: 100%;
   padding: 14px 18px;
   font-size: 16px;
@@ -1479,12 +1068,10 @@ img {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: $white;
-  resize: vertical;
+  color: $default;
+  cursor: pointer;
+  appearance: none;
   transition: all 0.3s ease;
-
-  &::placeholder {
-    color: #9ca3af;
-  }
 
   &:focus {
     outline: none;
@@ -1495,33 +1082,91 @@ img {
   &:hover:not(:focus) {
     border-color: #cbd5e1;
   }
-}
 
-.contact__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: $accent;
-  border: 2px solid transparent;
-  color: $white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 14px 32px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: fit-content;
-  margin-top: 8px;
+  option {
+    color: $default;
+    background: $white;
+  }
 
-  &:hover {
-    background: $accent;
-    border-color: $light-purple;
-    color: $white;
-    transform: scale(1.02);
+  option[value=''][disabled] {
+    color: #9ca3af;
+  }
+
+  &.contact__select--error {
+    border-color: $error-color;
+    background-color: #fff7ed;
+
+    &:focus {
+      border-color: $error-color;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
   }
 }
 
-/* Права частина: зображення */
+.contact__select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  transition: transform 0.2s ease;
+}
+
+.contact__select:focus + .contact__select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+  color: $accent;
+}
+
+.contact__select--error + .contact__select-arrow {
+  color: $error-color;
+}
+
+.contact__error-message {
+  font-size: 12px;
+  color: $error-color;
+  margin-top: 4px;
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.contact__error-message a {
+  color: $accent;
+  text-decoration: underline;
+}
+
+.contact__hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.contact__footer-text {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.4;
+
+  a {
+    color: $accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact__btn {
+  @include btn-primary;
+  margin-top: 8px;
+  padding: 12px 28px;
+}
+
 .contact__image-wrapper {
   width: 100%;
   border-radius: 24px;
@@ -1541,7 +1186,7 @@ img {
   }
 }
 
-/* ===== MOBILE BOTTOM NAVIGATION ===== */
+// ===== MOBILE BOTTOM NAVIGATION =====
 .mobile-bottom-nav {
   display: none;
   position: fixed;
@@ -1549,17 +1194,21 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 12px 20px;
-  background: #f3f4f6;
-  border-radius: 24px 24px 0 0;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  background: transparent;
 }
 
 .mobile-bottom-nav__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  background: $light-grey2;
+  border-radius: 60px;
+  padding: 8px;
+  max-width: 300px;
+  margin: 0 auto;
+  width: auto;
 }
 
 .mobile-bottom-nav__item {
@@ -1569,6 +1218,7 @@ img {
   align-items: center;
   text-decoration: none;
   transition: transform 0.2s ease;
+  max-width: 64px;
 
   &:hover {
     transform: translateY(-3px);
@@ -1580,8 +1230,8 @@ img {
 }
 
 .mobile-bottom-nav__icon-wrapper {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   background: $white;
   border-radius: 50%;
   display: flex;
@@ -1607,8 +1257,66 @@ img {
   transition: all 0.3s ease;
 }
 
-/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТІВ ===== */
+// ================================================================================================
+// ======================================== ДЕСКТОПНІ МЕДІА-ЗАПИТИ ========================================
+// ================================================================================================
+
 @media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .nav__list {
+    gap: 20px;
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .project-card__title {
+    font-size: 22px;
+  }
+
+  .reviews__title {
+    font-size: 38px;
+  }
+
+  .reviews__stars-img {
+    max-width: 200px;
+  }
+
+  .you-may-like__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .you-may-like__products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .featured-card__title {
+    font-size: 22px;
+  }
+
+  .featured-card__current-price {
+    font-size: 22px;
+  }
+
+  .product-card__image-wrapper {
+    height: 220px;
+  }
+
+  .product-card__add-btn {
+    width: 100%;
+  }
+
+  .featured-card__btn {
+    width: 100%;
+  }
+
   .contact__grid {
     gap: 40px;
   }
@@ -1623,10 +1331,225 @@ img {
   }
 }
 
-/* ===== АДАПТИВ ДЛЯ МОБІЛКИ ===== */
+@media (max-width: 880px) {
+  .header__inner {
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav {
+    display: none;
+  }
+
+  .header__actions {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header__inner {
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    order: 1;
+  }
+
+  .burger {
+    order: 2;
+  }
+}
+
+// ================================================================================================
+// ========================================= МОБІЛЬНІ МЕДІА-ЗАПИТИ =========================================
+// ================================================================================================
+
 @media (max-width: 768px) {
+  .projects {
+    padding: 40px 0 20px 0;
+  }
+
+  .projects__grid {
+    display: none;
+  }
+
+  .projects__slider {
+    display: block;
+  }
+
+  .project-card__title {
+    font-size: 20px;
+  }
+
+  .project-card__btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+
+  .project-card__overlay {
+    padding: 16px 12px 12px 12px;
+  }
+
+  .reviews {
+    padding: 20px 0;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 32px;
+  }
+
+  .breadcrumbs__list {
+    gap: 6px;
+  }
+
+  .breadcrumbs__item {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .reviews__block {
+    padding: 20px;
+  }
+
+  .reviews__title {
+    font-size: 28px;
+  }
+
+  .reviews__stars {
+    margin-bottom: 24px;
+  }
+
+  .reviews__stars-img {
+    max-width: 160px;
+  }
+
+  .reviews__text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .reviews__btn {
+    padding: 10px 28px;
+    font-size: 0.9rem;
+  }
+
+  .you-may-like {
+    padding: 20px 0;
+  }
+
+  .you-may-like__title {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  .you-may-like__products {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 4px 20px 4px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .product-card {
+    flex: 0 0 calc(50% - 8px);
+    min-width: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .product-card__image-wrapper {
+    height: 180px;
+  }
+
+  .you-may-like__dots {
+    display: flex;
+  }
+
+  .product-card__title {
+    font-size: 15px;
+  }
+
+  .product-card__current-price {
+    font-size: 16px;
+  }
+
+  .product-card__old-price {
+    font-size: 13px;
+  }
+
+  .product-card__content {
+    padding-top: 12px;
+  }
+
+  .product-card__add-btn {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .you-may-like__featured {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .featured-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .featured-card__title {
+    font-size: 18px;
+  }
+
+  .featured-card__current-price {
+    font-size: 18px;
+  }
+
+  .featured-card__old-price {
+    font-size: 14px;
+  }
+
+  .featured-card__badge {
+    margin-bottom: 16px;
+  }
+
+  .featured-card__content {
+    padding-top: 12px;
+  }
+
+  .featured-card__btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .featured-card__price {
+    padding-bottom: 12px;
+  }
+
   .contact {
-    padding: 40px 0 100px 0; /* Додаємо відступ знизу для навігації */
+    padding: 40px 0 100px 0;
   }
 
   .contact__grid {
@@ -1639,7 +1562,6 @@ img {
     order: 1;
   }
 
-  /* Ховаємо зображення на мобільному */
   .contact__image-wrapper {
     display: none;
   }
@@ -1660,18 +1582,171 @@ img {
     font-size: 14px;
   }
 
+  .contact__select {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .contact__select-arrow {
+    width: 18px;
+    height: 18px;
+    right: 14px;
+  }
+
   .contact__btn {
     width: 100%;
     padding: 12px 24px;
   }
 
-  /* Показуємо нижню навігацію на мобільному */
   .mobile-bottom-nav {
     display: block;
+  }
+
+  .project-card__btn,
+  .reviews__btn,
+  .product-card__add-btn,
+  .featured-card__btn,
+  .contact__btn {
+    width: 100% !important;
+    height: 48px;
+  }
+
+  .project-card__btn {
+    padding: 8px 20px !important;
+  }
+
+  .reviews__btn {
+    padding: 10px 28px !important;
+  }
+
+  .product-card__add-btn {
+    padding: 10px 12px !important;
+  }
+
+  .featured-card__btn {
+    padding: 10px 20px !important;
+  }
+
+  .contact__btn {
+    padding: 12px 24px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 0 0 calc(50% - 8px) !important;
+    min-width: calc(50% - 8px) !important;
+    max-width: calc(50% - 8px) !important;
+  }
+
+  .product-card__image-wrapper {
+    height: 160px;
   }
 }
 
 @media (max-width: 480px) {
+  .projects__slider-item {
+    flex: 0 0 calc(90% - 20px);
+  }
+
+  .projects {
+    padding: 40px 0 0 0;
+  }
+
+  .project-card__title {
+    font-size: 18px;
+  }
+
+  .reviews__title {
+    font-size: 24px;
+  }
+
+  .reviews__stars-img {
+    max-width: 140px;
+  }
+
+  .reviews__block {
+    padding: 16px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(50% - 6px) !important;
+    min-width: calc(50% - 6px) !important;
+    max-width: calc(50% - 6px) !important;
+    padding: 8px;
+  }
+
+  .product-card__image-wrapper {
+    height: 140px;
+  }
+
+  .product-card__title {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .product-card__specs {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .product-card__current-price {
+    font-size: 14px;
+  }
+
+  .product-card__old-price {
+    font-size: 11px;
+  }
+
+  .product-card__price {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .product-card__add-btn {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .product-card__content {
+    padding-top: 8px;
+  }
+
+  .featured-card {
+    padding: 10px;
+  }
+
+  .featured-card__title {
+    font-size: 16px;
+  }
+
+  .featured-card__current-price {
+    font-size: 16px;
+  }
+
+  .featured-card__old-price {
+    font-size: 12px;
+  }
+
+  .featured-card__badge {
+    margin-bottom: 12px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .featured-card__content {
+    padding-top: 10px;
+  }
+
+  .featured-card__btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .featured-card__price {
+    padding-bottom: 8px;
+  }
+
   .contact {
     padding: 30px 0 90px 0;
   }
@@ -1697,18 +1772,34 @@ img {
     padding: 10px 14px;
   }
 
+  .contact__select {
+    padding: 10px 14px;
+  }
+
+  .contact__select-arrow {
+    width: 16px;
+    height: 16px;
+    right: 12px;
+  }
+
   .contact__btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
   .mobile-bottom-nav {
-    padding: 10px 16px;
+    padding: 8px;
+  }
+
+  .mobile-bottom-nav__container {
+    padding: 6px 12px;
+    gap: 12px;
+    max-width: 280px;
   }
 
   .mobile-bottom-nav__icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 
   .mobile-bottom-nav__icon {
@@ -1716,7 +1807,91 @@ img {
     height: 20px;
   }
 
-  .mobile-bottom-nav__container {
-    gap: 12px;
+  .project-card__btn {
+    padding: 6px 16px !important;
+  }
+
+  .product-card__add-btn {
+    padding: 8px 10px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .you-may-like__container {
+    padding: 0 8px;
+  }
+
+  .you-may-like__products {
+    gap: 8px;
+    padding: 2px 2px 15px 2px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(50% - 6px) !important;
+    min-width: calc(50% - 6px) !important;
+    max-width: calc(50% - 6px) !important;
+    padding: 6px;
+  }
+
+  .product-card__image-wrapper {
+    height: 120px;
+  }
+
+  .product-card__title {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .product-card__specs {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .product-card__current-price {
+    font-size: 12px;
+  }
+
+  .product-card__old-price {
+    font-size: 10px;
+  }
+
+  .product-card__price {
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .product-card__add-btn {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  .product-card__content {
+    padding-top: 6px;
+  }
+
+  .featured-card {
+    padding: 8px;
+  }
+
+  .featured-card__title {
+    font-size: 14px;
+  }
+
+  .featured-card__current-price {
+    font-size: 14px;
+  }
+
+  .featured-card__old-price {
+    font-size: 11px;
+  }
+
+  .featured-card__specs {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .featured-card__btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }

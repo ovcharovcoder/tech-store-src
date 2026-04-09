@@ -361,52 +361,6 @@ Development date: 08.04.2026 -->
           </div>
         </div>
 
-        <!-- Навігація слайдера -->
-        <div class="projects__slider-nav">
-          <button
-            class="projects__slider-btn"
-            id="sliderPrev"
-            aria-label="Previous"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 18L9 12L15 6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            class="projects__slider-btn"
-            id="sliderNext"
-            aria-label="Next"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 18L15 12L9 6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-
         <!-- Dots індикатори -->
         <div class="projects__slider-dots" id="sliderDots"></div>
       </div>
@@ -524,11 +478,11 @@ Development date: 08.04.2026 -->
                 </button>
               </div>
               <div class="product-card__content">
-                <h3 class="product-card__title">iPhone 15 Pro</h3>
-                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <h3 class="product-card__title">Google Pixel 8</h3>
+                <p class="product-card__specs">128GB · 8GB RAM · Hazel</p>
                 <div class="product-card__price">
-                  <span class="product-card__current-price">$999</span>
-                  <span class="product-card__old-price">$1,199</span>
+                  <span class="product-card__current-price">$599</span>
+                  <span class="product-card__old-price">$699</span>
                 </div>
               </div>
               <button class="product-card__add-btn">Add</button>
@@ -550,11 +504,11 @@ Development date: 08.04.2026 -->
                 </button>
               </div>
               <div class="product-card__content">
-                <h3 class="product-card__title">iPhone 15 Pro</h3>
-                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <h3 class="product-card__title">Google Pixel 8</h3>
+                <p class="product-card__specs">128GB · 8GB RAM · Hazel</p>
                 <div class="product-card__price">
-                  <span class="product-card__current-price">$999</span>
-                  <span class="product-card__old-price">$1,199</span>
+                  <span class="product-card__current-price">$599</span>
+                  <span class="product-card__old-price">$699</span>
                 </div>
               </div>
               <button class="product-card__add-btn">Add</button>
@@ -627,7 +581,6 @@ Development date: 08.04.2026 -->
   <section class="contact">
     <div class="contact__container">
       <div class="contact__grid">
-        <!-- Ліва частина: форма -->
         <div class="contact__form-wrapper">
           <h2 class="contact__title">Get in Touch</h2>
 
@@ -641,8 +594,11 @@ Development date: 08.04.2026 -->
                 name="name"
                 class="contact__input"
                 placeholder="Your Name"
-                required
               />
+              <div class="contact__error-message" id="nameError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
             </div>
 
             <!-- Поле Email -->
@@ -654,9 +610,49 @@ Development date: 08.04.2026 -->
                 name="email"
                 class="contact__input"
                 placeholder="Email"
-                required
               />
+              <div class="contact__error-message" id="emailError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
             </div>
+
+            <!-- Поле Subject -->
+            <!-- <div class="contact__field">
+              <label for="subject" class="contact__label">Subject*</label>
+              <div class="contact__select-wrapper">
+                <select id="subject" name="subject" class="contact__select">
+                  <option value="" disabled selected>
+                    Select inquiry type
+                  </option>
+                  <option value="general">General Question</option>
+                  <option value="support">Technical Support</option>
+                  <option value="sales">Sales</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+                <svg
+                  class="contact__select-arrow"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="contact__error-message" id="subjectError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
+            </div> -->
 
             <!-- Поле Message -->
             <div class="contact__field">
@@ -665,21 +661,22 @@ Development date: 08.04.2026 -->
                 id="message"
                 name="message"
                 class="contact__textarea"
-                placeholder="Message"
+                placeholder="Your message..."
                 rows="5"
-                required
               ></textarea>
+              <div class="contact__error-message" id="messageError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
             </div>
 
-            <!-- Кнопка відправки -->
             <button type="submit" class="contact__btn">Send Message</button>
           </form>
         </div>
 
-        <!-- Права частина: зображення (ховається на мобільному) -->
         <div class="contact__image-wrapper">
           <img
-            src="/images/product-img-1.webp"
+            src="/images/operator.webp"
             alt="Contact us"
             class="contact__image"
           />
