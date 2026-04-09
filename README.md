@@ -30,17 +30,22 @@
 
 ```bash
 # Клонування репозиторію
-git clone https://github.com/your-username/techstore.git
-cd techstore
+git clone https://github.com/ovcharovcoder/tech-store-src.git
+cd tech-store-src
+
+# Встановлення gulp (у разі потреби):  
+npm install --global gulp-cli
+npm install --save-dev gulp
 
 # Встановлення залежностей
 npm install
 
 # Запуск режиму розробки
-npm run dev
+gulp
 
 # Збірка для продакшену
-npm run build
+gulp build
+```
 
 
 ## Автор
