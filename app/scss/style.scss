@@ -1,0 +1,12 @@
+// Сonnecting SCSS files for a project
+@use 'optimize';
+@use 'vars' as *;
+@use 'mixins';
+@use 'fonts';
+@use 'global';
+@use 'modal';
+@use 'header';
+@use 'swiper';
+@use 'main';
+@use 'footer';
+@use 'media';

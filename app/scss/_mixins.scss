@@ -1,0 +1,53 @@
+@use 'vars' as *;
+@use 'fonts' as *;
+
+// Mixins for Fonts
+@mixin figtree($weight: 400) {
+  font-family: 'Figtree', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: $weight;
+
+  @if $weight == 500 {
+    font-family: 'Figtree-Medium', sans-serif;
+  } @else if $weight == 600 {
+    font-family: 'Figtree-Semibold', sans-serif;
+  } @else if $weight == 700 {
+    font-family: 'Figtree-Bold', sans-serif;
+  }
+}
+
+// Mixin for Button
+@mixin btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $accent;
+  border: 2px solid transparent;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: inherit;
+
+  &:hover {
+    background: $accent;
+    outline: 4px solid $light-purple;
+    color: $white;
+    transform: scale(1.02);
+  }
+
+  &:focus {
+    background-color: $light-purple;
+  }
+}
+
+// Міксин для кнопки на всю ширину
+@mixin btn-primary-full {
+  @include btn-primary;
+  width: 100%;
+}

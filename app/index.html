@@ -1,0 +1,747 @@
+<!-- The site was developed based on 'TechStore' figma layout
+Development author: Andrii Ovcharov
+Development date: 08.04.2026 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+
+  <body>
+    <!-- Header section -->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <!-- Logo -->
+          <div class="header__logo">
+            <a href="/" class="logo">
+              <img
+                src="/images/logo.svg"
+                alt="Логотип магазину"
+                class="logo__img"
+              />
+            </a>
+          </div>
+
+          <!-- Burger button (з'являється на 850px) -->
+          <button class="burger" id="burgerBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Навігація (десктоп) -->
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Home</a>
+              </li>
+
+              <!-- Shop dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Shop
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">All Products</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">New Arrivals</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Sale</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Accessories</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Collections dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Collections
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Winter 2025</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Summer Vibes</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Limited Edition</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Company dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Company
+                  <span class="nav__arrow-icon">
+                    <img src="/images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-menu__link">About</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">FAQ</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Reviews</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Photos</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Gift Boxes</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Contact</a></li>
+                </ul>
+              </li>
+
+              <!-- Support dropdown -->
+              <li class="nav__item nav__item--dropdown" data-dropdown>
+                <button class="nav__dropdown-btn" aria-expanded="false">
+                  Support
+                  <span class="nav__arrow-icon">
+                    <img src="images/icons/arrow-down.svg" alt="▼" />
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-menu__link">FAQs</a></li>
+                  <li>
+                    <a href="#" class="dropdown-menu__link">Shipping Info</a>
+                  </li>
+                  <li><a href="#" class="dropdown-menu__link">Returns</a></li>
+                  <li><a href="#" class="dropdown-menu__link">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Icons (десктоп) -->
+          <div class="header__actions">
+            <a href="#" class="action-icon" aria-label="Wishlist">
+              <img src="/images/icons/favorite.svg" alt="heart" />
+            </a>
+            <a href="#" class="action-icon action-icon--cart" aria-label="Cart">
+              <img src="/images/icons/shopping-basket.svg" alt="cart" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile menu (з'являється при кліку на бургер) -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a href="#" class="mobile-menu__link">Home</a>
+        </li>
+
+        <!-- Shop mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Shop
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+
+        <!-- Collections mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Collections
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">Winter 2025</a></li>
+            <li><a href="#">Summer Vibes</a></li>
+            <li><a href="#">Limited Edition</a></li>
+          </ul>
+        </li>
+
+        <!-- Company mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Company
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Gift Boxes</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+
+        <!-- Support mobile dropdown -->
+        <li
+          class="mobile-menu__item mobile-menu__item--dropdown"
+          data-mobile-dropdown
+        >
+          <button class="mobile-menu__dropdown-btn">
+            Support
+            <span class="mobile-menu__arrow-icon">
+              <img src="/images/icons/arrow-down.svg" alt="▼" />
+            </span>
+          </button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Mobile actions (іконки серця та корзини) -->
+      <!-- <div class="mobile-menu__actions">
+          <a href="#" class="action-icon" aria-label="Wishlist">
+            <img src="/images/icons/favorite.svg" alt="heart" />
+            <span>Wishlist</span>
+          </a>
+          <a href="#" class="action-icon action-icon--cart" aria-label="Cart">
+            <img src="/images/icons/shopping-basket.svg" alt="cart" />
+            <span>Cart</span>
+          </a>
+        </div> -->
+    </div>
+
+    <!-- Overlay затемнення -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header section end-->
+  </body>
+</html>
+
+<main class="main">
+  <!-- ========= ДОДАНО H1 (ПРИХОВАНИЙ) ========= -->
+  <h1 class="visually-hidden">
+    TechStore - магазин сучасної електроніки та гаджетів
+  </h1>
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="projects__container">
+      <!-- Десктопна сітка (4 картки) -->
+      <div class="projects__grid">
+        <!-- Картка 1 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 1"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h2 class="project-card__title">New Arrivals</h2>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 2 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-2.webp"
+            alt="Project 2"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h2 class="project-card__title">Spring Sale Up to 50% Off</h2>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 3 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-3.webp"
+            alt="Project 3"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h2 class="project-card__title">Free Shipping Over $99</h2>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+
+        <!-- Картка 4 -->
+        <div class="project-card">
+          <img
+            src="/images/gallery-1.webp"
+            alt="Project 4"
+            class="project-card__image"
+          />
+          <div class="project-card__overlay">
+            <h2 class="project-card__title">New Arrivals</h2>
+            <a href="#" class="project-card__btn">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Мобільний слайдер -->
+      <div class="projects__slider">
+        <div class="projects__slider-track" id="sliderTrack">
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 1"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h2 class="project-card__title">Modern Architecture</h2>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-2.webp"
+                alt="Project 2"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h2 class="project-card__title">Interior Design</h2>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-3.webp"
+                alt="Project 3"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h2 class="project-card__title">Urban Living</h2>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__slider-item">
+            <div class="project-card">
+              <img
+                src="/images/gallery-1.webp"
+                alt="Project 4"
+                class="project-card__image"
+              />
+              <div class="project-card__overlay">
+                <h2 class="project-card__title">Sustainable Design</h2>
+                <a href="#" class="project-card__btn">View Product</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dots індикатори -->
+        <div class="projects__slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs & Reviews Section -->
+  <section class="reviews">
+    <div class="reviews__container">
+      <!-- Хлібні крихти -->
+      <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">Home</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Electronics</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Smartphones</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Android</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Premium</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Galaxy S24 Ultra</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Блок відгуків -->
+      <div class="reviews__block">
+        <!-- Зірки (одне зображення) -->
+        <div class="reviews__stars">
+          <img
+            src="/images/icons/star-rating.svg"
+            alt="5 star rating"
+            class="reviews__stars-img"
+          />
+        </div>
+
+        <!-- Заголовок -->
+        <h2 class="reviews__title">
+          Loved by tons of people! Real users, real results.
+        </h2>
+
+        <!-- Текст -->
+        <p class="reviews__text">
+          Rated 4.8 out of 5 by over 7,809 customers — from dread beginners to
+          seasoned pros.
+        </p>
+
+        <!-- Кнопка -->
+        <a href="#" class="reviews__btn">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- You May Also Like Section -->
+  <section class="you-may-like">
+    <div class="you-may-like__container">
+      <h2 class="you-may-like__title">You May Also Like</h2>
+
+      <div class="you-may-like__grid">
+        <!-- Ліва частина: 4 картки в сітці 2x2 -->
+        <div class="you-may-like__products-wrapper">
+          <div class="you-may-like__products" id="productsSliderTrack">
+            <!-- Картка 1 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-1.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 2 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-2.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Google Pixel 8</h3>
+                <p class="product-card__specs">128GB · 8GB RAM · Hazel</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$599</span>
+                  <span class="product-card__old-price">$699</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 3 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-2.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Google Pixel 8</h3>
+                <p class="product-card__specs">128GB · 8GB RAM · Hazel</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$599</span>
+                  <span class="product-card__old-price">$699</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+
+            <!-- Картка 4 -->
+            <div class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/images/product-img-1.webp"
+                  alt="iPhone 15 Pro"
+                  class="product-card__image"
+                />
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <img src="/images/icons/favorite.svg" alt="Wishlist" />
+                </button>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">iPhone 15 Pro</h3>
+                <p class="product-card__specs">256GB · 8GB RAM · Black</p>
+                <div class="product-card__price">
+                  <span class="product-card__current-price">$999</span>
+                  <span class="product-card__old-price">$1,199</span>
+                </div>
+              </div>
+              <button class="product-card__add-btn">Add</button>
+            </div>
+          </div>
+
+          <!-- Dots для мобільного слайдера -->
+          <div class="you-may-like__dots" id="productsSliderDots"></div>
+        </div>
+
+        <!-- Права частина: велика картка -->
+        <div class="you-may-like__featured">
+          <div class="featured-card">
+            <div class="featured-card__image-wrapper">
+              <img
+                src="/images/product-img-1.webp"
+                alt="Samsung Galaxy S24 Ultra"
+                class="featured-card__image"
+              />
+              <button
+                class="featured-card__wishlist"
+                aria-label="Add to wishlist"
+              >
+                <img src="/images/icons/favorite.svg" alt="Wishlist" />
+              </button>
+            </div>
+            <div class="featured-card__content">
+              <span class="featured-card__badge">New Release</span>
+              <h3 class="featured-card__title">Samsung Galaxy S24 Ultra</h3>
+              <p class="featured-card__specs">256GB · 8GB RAM · Black</p>
+              <div class="featured-card__price">
+                <span class="featured-card__current-price">$999</span>
+                <span class="featured-card__old-price">$1,199</span>
+              </div>
+              <button class="featured-card__btn">View Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact">
+    <div class="contact__container">
+      <div class="contact__grid">
+        <div class="contact__form-wrapper">
+          <h2 class="contact__title">Get in Touch</h2>
+
+          <form class="contact__form" id="contactForm">
+            <!-- Поле Name -->
+            <div class="contact__field">
+              <label for="name" class="contact__label">Name*</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="contact__input"
+                placeholder="Your Name"
+              />
+              <div class="contact__error-message" id="nameError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
+            </div>
+
+            <!-- Поле Email -->
+            <div class="contact__field">
+              <label for="email" class="contact__label">Email*</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact__input"
+                placeholder="Email"
+              />
+              <div class="contact__error-message" id="emailError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
+            </div>
+
+            <!-- Поле Subject -->
+            <!-- <div class="contact__field">
+              <label for="subject" class="contact__label">Subject*</label>
+              <div class="contact__select-wrapper">
+                <select id="subject" name="subject" class="contact__select">
+                  <option value="" disabled selected>
+                    Select inquiry type
+                  </option>
+                  <option value="general">General Question</option>
+                  <option value="support">Technical Support</option>
+                  <option value="sales">Sales</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+                <svg
+                  class="contact__select-arrow"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="contact__error-message" id="subjectError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
+            </div> -->
+
+            <!-- Поле Message -->
+            <div class="contact__field">
+              <label for="message" class="contact__label">Message*</label>
+              <textarea
+                id="message"
+                name="message"
+                class="contact__textarea"
+                placeholder="Your message..."
+                rows="5"
+              ></textarea>
+              <div class="contact__error-message" id="messageError">
+                Please fill in all fields marked with an asterisk (*)! Please
+                note our <a href="#">Privacy policy</a>.
+              </div>
+            </div>
+
+            <button type="submit" class="contact__btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact__image-wrapper">
+          <img
+            src="/images/operator.webp"
+            alt="Contact us"
+            class="contact__image"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Bottom Navigation (для мобільної версії) -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__container">
+      <a href="/" class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/home.svg"
+            alt="Home"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="sortBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/catalog.svg"
+            alt="Sort"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="wishlistBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/favorite.svg"
+            alt="Wishlist"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+
+      <a href="#" class="mobile-bottom-nav__item" id="cartBtn">
+        <div class="mobile-bottom-nav__icon-wrapper">
+          <img
+            src="/images/icons/shopping-basket.svg"
+            alt="Cart"
+            class="mobile-bottom-nav__icon"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+  <footer class="footer">
+    <div class="container">
+
+    </div>	
+  </footer>
+  </div> 
+  <!-- END/ wrapper -->
+  
+  <script src="js/main.min.js"></script>
+  </body>
+</html>
