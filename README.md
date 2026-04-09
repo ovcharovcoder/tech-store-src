@@ -20,9 +20,9 @@ app/
 |-- components/ компоненти (header, footer...)
 |-- fonts/ # шрифт у форматах woff, woff2
 |-- images/ # зображення та іконки (images/icons) у форматах webp, avif 
-|-- js/ # HTML-сторінки + компоненти (header, footer)
-|-- scss/ # SCSS файли (vars, mixins, style)
-|-- js/ # Vanilla JS
+|-- js/ # js скрипти
+|-- scss/ # SCSS файли (vars, mixins, style...)
+|-- # Файли збірки Gulp та інструкція
 
 ```
 
