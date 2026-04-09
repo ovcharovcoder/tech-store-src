@@ -69,4 +69,4 @@ gulp build
 
 
 ## Автор
-Andrii Ovcharov | ovcharovcoder@gmail.com | Telegram: https://t.me/Ovcharov_Andrii
+Andrii Ovcharov<br> | ovcharovcoder@gmail.com <br>| Telegram: https://t.me/Ovcharov_Andrii
