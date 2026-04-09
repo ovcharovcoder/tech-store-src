@@ -12,8 +12,17 @@
 | HTML | BEM-методологія |
 | Стилі | SCSS |
 | JavaScript | Vanilla JS (без бібліотек) |
+| Оптимізовано для WordPress| Зображення в html та у форматах webp, avif.
 
 ## Структура проєкту
+app/
+|-- components/ компоненти (header, footer...)
+|-- fonts/ шрифт у форматах woff, woff2
+|-- images/ зображення та іконки (images/icons) у форматах webp, avif 
+├── html/ # HTML-сторінки + компоненти (header, footer)
+├── scss/ # SCSS файли (vars, mixins, style)
+├── js/ # Vanilla JS
+└── images/ # Зображення та іконки
 
 
 ## Особливості реалізації
