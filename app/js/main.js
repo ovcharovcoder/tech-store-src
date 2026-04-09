@@ -1,7 +1,3 @@
-// ================================================================================================
-// ======================================== ГОЛОВНИЙ СКРИПТ ========================================
-// ================================================================================================
-
 document.addEventListener('DOMContentLoaded', function () {
   // ===== ДЕСКТОПНІ ДРОПДАУНИ =====
   document.querySelectorAll('[data-dropdown]').forEach(dropdownItem => {
@@ -85,25 +81,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ===== СЛАЙДЕР ДЛЯ СЕКЦІЇ PROJECTS =====
+  // ===== СЛАЙДЕР ДЛЯ СЕКЦІЇ PROJECTS (ТІЛЬКИ DOTS) =====
   const projectsSliderTrack = document.getElementById('sliderTrack');
-  const projectsPrevBtn = document.getElementById('sliderPrev');
-  const projectsNextBtn = document.getElementById('sliderNext');
   const projectsDotsContainer = document.getElementById('sliderDots');
 
-  if (
-    projectsSliderTrack &&
-    projectsPrevBtn &&
-    projectsNextBtn &&
-    projectsDotsContainer
-  ) {
+  if (projectsSliderTrack && projectsDotsContainer) {
     let projectsCurrentIndex = 0;
     const projectsSlides = projectsSliderTrack.querySelectorAll(
       '.projects__slider-item',
     );
     const projectsTotalSlides = projectsSlides.length;
 
+    if (projectsTotalSlides === 0) return;
+
+    // Перевірка чи на мобільному (до 768px)
+    function isProjectsMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    // Створення dots
     function projectsCreateDots() {
+      if (!isProjectsMobile()) {
+        projectsDotsContainer.innerHTML = '';
+        return;
+      }
+
       projectsDotsContainer.innerHTML = '';
       for (let i = 0; i < projectsTotalSlides; i++) {
         const dot = document.createElement('button');
@@ -115,7 +117,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    // Оновлення активного dot
     function projectsUpdateDots() {
+      if (!isProjectsMobile()) return;
       const dots = projectsDotsContainer.querySelectorAll('.projects__dot');
       dots.forEach((dot, index) => {
         if (index === projectsCurrentIndex) {
@@ -126,12 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    function projectsUpdateButtons() {
-      projectsPrevBtn.disabled = projectsCurrentIndex === 0;
-      projectsNextBtn.disabled =
-        projectsCurrentIndex === projectsTotalSlides - 1;
-    }
-
+    // Перехід до слайду
     function projectsGoToSlide(index) {
       if (index < 0) index = 0;
       if (index >= projectsTotalSlides) index = projectsTotalSlides - 1;
@@ -146,10 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       projectsUpdateDots();
-      projectsUpdateButtons();
     }
 
+    // Слідкуємо за скролом
     function projectsHandleScroll() {
+      if (!isProjectsMobile()) return;
+
       const slideWidth = projectsSlides[0].offsetWidth;
       const gap = 20;
       const scrollPosition = projectsSliderTrack.scrollLeft;
@@ -162,24 +163,28 @@ document.addEventListener('DOMContentLoaded', function () {
       ) {
         projectsCurrentIndex = newIndex;
         projectsUpdateDots();
-        projectsUpdateButtons();
       }
     }
 
-    projectsPrevBtn.addEventListener('click', () =>
-      projectsGoToSlide(projectsCurrentIndex - 1),
-    );
-    projectsNextBtn.addEventListener('click', () =>
-      projectsGoToSlide(projectsCurrentIndex + 1),
-    );
-    projectsSliderTrack.addEventListener('scroll', projectsHandleScroll);
-    window.addEventListener('resize', () =>
-      projectsGoToSlide(projectsCurrentIndex),
-    );
+    // Оновлення при ресайзі
+    function projectsHandleResize() {
+      projectsCreateDots();
+      if (isProjectsMobile()) {
+        projectsGoToSlide(0);
+      }
+    }
 
+    // Підписуємось на події
+    projectsSliderTrack.addEventListener('scroll', projectsHandleScroll);
+    window.addEventListener('resize', projectsHandleResize);
+
+    // Ініціалізація
     projectsCreateDots();
-    projectsUpdateButtons();
-    setTimeout(() => projectsGoToSlide(0), 100);
+    setTimeout(() => {
+      if (isProjectsMobile()) {
+        projectsGoToSlide(0);
+      }
+    }, 100);
   }
 
   // ===== СЛАЙДЕР ДЛЯ YOU MAY ALSO LIKE =====
@@ -191,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const productsSlides =
       productsSliderTrack.querySelectorAll('.product-card');
     const productsTotalSlides = productsSlides.length;
+
+    if (productsTotalSlides === 0) return;
 
     function isMobile() {
       return window.innerWidth <= 768;
@@ -260,7 +267,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function productsHandleResize() {
       productsCreateDots();
-      productsGoToSlide(0);
+      if (isMobile()) {
+        productsGoToSlide(0);
+      }
     }
 
     productsSliderTrack.addEventListener('scroll', productsHandleScroll);
