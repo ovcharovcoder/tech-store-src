@@ -25,5 +25,23 @@
 - Доступність — семантична верстка, aria-атрибути, прихований h1 для SEO
 
 
+
+## Запуск проєкту
+
+```bash
+# Клонування репозиторію
+git clone https://github.com/your-username/techstore.git
+cd techstore
+
+# Встановлення залежностей
+npm install
+
+# Запуск режиму розробки
+npm run dev
+
+# Збірка для продакшену
+npm run build
+
+
 ## Автор
 Andrii Ovcharov | ovcharovcoder@gmail.com
