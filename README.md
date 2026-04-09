@@ -3,7 +3,7 @@
 ## Посилання на проєкт
 - **Демо:** (https://ovcharovcoder.github.io/tech-store-site/)
 - **Репозиторій:** (https://github.com/ovcharovcoder/tech-store-site)
-- **Дизайн сторінки декстоп:** (https://www.figma.com/design/Zm3m3Bon4RrESsp9UWhxd8/Test-for-Front-end---DARTC--Copy-?node-id=0-1&t=M9yLsuteMTviFpRi-1)
+- **Дизайн сторінки для десктоп:** (https://www.figma.com/design/Zm3m3Bon4RrESsp9UWhxd8/Test-for-Front-end---DARTC--Copy-?node-id=0-1&t=M9yLsuteMTviFpRi-1)
 
 ## Технології
 
