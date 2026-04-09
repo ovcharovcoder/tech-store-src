@@ -1,9 +1,9 @@
 # TechStore - Інтернет-магазин електроніки (тестове)
 
 ## Посилання на проєкт
-- **Демо:** (https://ovcharovcoder.github.io/tech-store-site/)
-- **Репозиторій:** (https://github.com/ovcharovcoder/tech-store-site)
-- **Дизайн сторінки для десктоп:** (https://www.figma.com/design/Zm3m3Bon4RrESsp9UWhxd8/Test-for-Front-end---DARTC--Copy-?node-id=0-1&t=M9yLsuteMTviFpRi-1)
+- **Демо:** https://ovcharovcoder.github.io/tech-store-site/
+- **Репозиторій:** https://github.com/ovcharovcoder/tech-store-site
+- **Дизайн для десктоп (Figma):** https://www.figma.com/design/Zm3m3Bon4RrESsp9UWhxd8/Test-for-Front-end---DARTC--Copy-?node-id=0-1&t=M9yLsuteMTviFpRi-1
 
 ## Технології
 
@@ -13,7 +13,7 @@
 | HTML | BEM-методологія |
 | Стилі | SCSS |
 | JavaScript | Vanilla JS (без бібліотек) |
-| Оптимізовано для WordPress| Зображення в html та у форматах webp, avif.
+| Оптимізація | Зображення у форматах webp, avif, готовність до WordPress |
 
 ## Структура проєкту
 ```bash
@@ -35,7 +35,7 @@ app/
 - Адаптивний дизайн — брейкпоінти: 1024px, 850px, 768px, 480px, 390px
 - Ванільний JS — всі слайдери, дропдауни, валідація форми реалізовані без бібліотек
 - Доступність — семантична верстка, aria-атрибути, прихований h1 для SEO
-- Чистота та ясність - Код чистий, а ключеві блоки містять коментарі для зручності підтримки в подальшому
+- Чистота коду — ключові блоки містять коментарі для зручності підтримки
 
 
 ## Виправлення форми зворотного зв'язку
