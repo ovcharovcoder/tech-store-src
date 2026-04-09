@@ -15,6 +15,7 @@
 | Оптимізовано для WordPress| Зображення в html та у форматах webp, avif.
 
 ## Структура проєкту
+```bash
 app/
 |-- components/ компоненти (header, footer...)
 |-- fonts/ шрифт у форматах woff, woff2
@@ -23,7 +24,7 @@ app/
 ├── scss/ # SCSS файли (vars, mixins, style)
 ├── js/ # Vanilla JS
 └── images/ # Зображення та іконки
-
+```
 
 ## Особливості реалізації
 - BEM-методологія — всі класи названі за стандартом BEM
