@@ -1,8 +1,8 @@
 # TechStore - Інтернет-магазин електроніки (тестове)
 
 ## Посилання на проєкт
-- **Демо:** [https://your-demo-link.com](https://your-demo-link.com)
-- **Репозиторій:** [https://github.com/your-username/techstore](https://github.com/your-username/techstore)
+- **Демо:** [https://your-demo-link.com](https://ovcharovcoder.github.io/tech-store-site/)
+- **Репозиторій:** [https://github.com/ovcharovcoder/tech-store-site)
 
 ## Технології
 
