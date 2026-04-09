@@ -21,6 +21,7 @@ app/
 |-- fonts/ # шрифт у форматах woff, woff2
 |-- images/ # зображення та іконки (images/icons) у форматах webp, avif 
 |-- js/ # js скрипти
+|-- pages/ # html сторінки
 |-- scss/ # SCSS файли (vars, mixins, style...)
 |-- # Файли збірки Gulp та інструкція
 
